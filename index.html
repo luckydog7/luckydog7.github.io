@@ -3,9 +3,55 @@
 <head>
 	<title>pico's school</title>
 <style type="text/css">
-	#container {
+body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Lato", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+    align-self: center;
+    max-height: calc(100vh - 70px);
+}
+
+#container {
     height: calc(100vh - 70px);
     width: 100vw;
+}
+
+#player {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#nav {
+    width: 100%;
+    background: #37528c;
+    border: 0;
+    border-color: darkgray;
+    border-bottom: 2px #37528c;
+    border-style: solid;
+    box-shadow: 0 5px 5px #37528c;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-self: flex-start;
+    color: white;
+    min-height: 45px;
+    margin-bottom: 15px;
 }
 </style>
 
