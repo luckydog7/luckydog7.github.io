@@ -17,8 +17,8 @@
     #game {
         margin: 0 auto;
         position: relative;
-        height: 540px;
-        width: 960px;
+        width: 100%;
+        height: 720px;
     }
 
     iframe {
@@ -39,6 +39,9 @@
     <script>
         function gofullscreen() {
             document.getElementsByTagName("iframe")[0].requestFullscreen();
+        }
+        function gcd (a, b) {
+            return (b == 0) ? a : gcd (b, a%b);
         }
     </script>
 </head>
