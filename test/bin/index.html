@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="utf-8">
+	
+	<title>HelloWorld</title>
+	
+	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	
+	
+	<link rel="shortcut icon" type="image/png" href="./favicon.png">
+	
+	
+	<script type="text/javascript" src="./HelloWorld.js"></script>
+	
+	<script>
+		window.addEventListener ("touchmove", function (event) { event.preventDefault (); }, { capture: false, passive: false });
+		if (typeof window.devicePixelRatio != 'undefined' && window.devicePixelRatio > 2) {
+			var meta = document.getElementById ("viewport");
+			meta.setAttribute ('content', 'width=device-width, initial-scale=' + (2 / window.devicePixelRatio) + ', user-scalable=no');
+		}
+	</script>
+	
+	<style>
+		html,body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+		#openfl-content { background: #000000; width: 640px; height: 480px; }
+		@font-face {
+			font-family: 'Nokia Cellphone FC Small';
+			src: url('flixel/fonts/nokiafc22.eot?#iefix') format('embedded-opentype'),
+			url('flixel/fonts/nokiafc22.woff') format('woff'),
+			url('flixel/fonts/nokiafc22.ttf') format('truetype'),
+			url('flixel/fonts/nokiafc22.svg#Nokia%20Cellphone%20FC%20Small') format('svg');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Monsterrat';
+			src: url('flixel/fonts/monsterrat.eot?#iefix') format('embedded-opentype'),
+			url('flixel/fonts/monsterrat.woff') format('woff'),
+			url('flixel/fonts/monsterrat.ttf') format('truetype'),
+			url('flixel/fonts/monsterrat.svg#Monsterrat') format('svg');
+			font-weight: normal;
+			font-style: normal;
+		}
+
+		.b {
+			position: absolute;
+			top: 20vh;
+			left: 0;
+		}
+
+	</style>
+	
+</head>
+<body>
+<script type="text/javascript">
+
+	
+	function eventf (key, type){
+		let event = new Event(type);
+		event.key = key;
+		event.charCode = 0;
+		switch (key.trim()) {
+			case 'w':
+				event.KeyCode = 87;
+				break;
+			case 'a':
+				event.KeyCode = 65;
+				break;
+			case 's':
+				event.keyCode = 83;
+				break;
+			case 'd':
+				event.KeyCode = 68;
+				break;
+			case 'enter':
+				event.KeyCode = 13;
+				break;
+		}
+
+		event.which = event.KeyCode;
+
+		window.dispatchEvent(event);
+	}
+
+</script>
+	<noscript>This webpage makes extensive use of JavaScript. Please enable JavaScript in your web browser to view this page.</noscript>
+	
+	<div id="openfl-content"></div>
+	
+	<script type="text/javascript">
+		lime.embed ("HelloWorld", "openfl-content", 640, 480, { parameters: {} });
+	</script>
+
+	<div class="b">
+		<img id='bw' onmousedown="eventf('w', 'keydown_m')" onmouseup="eventf('w', 'keyup_m')" src="bt.png"></img>
+		<img id='ba' onmousedown="eventf('a', 'keydown_m')" onmouseup="eventf('a', 'keyup_m')" src="bt.png"></img>
+		<img id='bs' onmousedown="eventf('s', 'keydown_m')" onmouseup="eventf('s', 'keyup_m')" src="bt.png"></img>
+		<img id='bd' onmousedown="eventf('d', 'keydown_m')" onmouseup="eventf('d', 'keyup_m')" src="bt.png"></img>
+	</div>
+	
+</body>
+</html>
